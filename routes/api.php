@@ -16,3 +16,17 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// ------ Tâm -------
+Route::apiResource('phim','API\APIPhimController');
+
+Route::get('topphim_sc','API\APIPhimController@Top_Phim_sc');
+Route::get('topphim_dc','API\APIPhimController@Top_Phim_dc');
+
+// --------------
+Route::apiResource('taikhoan','API\TaiKhoanController');
+Route::apiResource('ghe','API\GheController');
+Route::apiResource('lichchieu','API\LichChieuController');
+Route::apiResource('ve','API\VeController');
+Route::apiResource('dsve','API\DsVeController');
+Route::apiResource('doithongtin','API\DoiMatKhauController');
