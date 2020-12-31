@@ -32,12 +32,8 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">Hình ảnh</label>
-                <img  style="width: 100px" src="{{asset('public/image')}}/{{$phim[0]->Hinhanh}}">
-              </div>
-              <div class="form-group">
                 <label >Hình ảnh</label>
-                <input enctype="multipart/form-data" accept="*.png|*.jpg|*.jpeg" value="" type="file" class="form-control {{ $errors->has('Hinhanh') ? ' is-invalid ' : ''}}" class="custom-file-input" name="Hinhanh"/>
+                <input enctype="multipart/form-data"  name="Hinhanh" accept="*.png|*.jpg|*.jpeg" value=""  type="file" class="form-control {{ $errors->has('Hinhanh') ? ' is-invalid ' : ''}}" class="custom-file-input"/>
                 @if ($errors->has('Hinhanh'))
                   <span class="invalid-feedback">
                       <strong>{{ $errors->first('Hinhanh') }}</strong>
@@ -50,7 +46,7 @@
               </div>
               <div class="form-group">
                 <label for="inputDescription">Mô tả phim</label>
-                <textarea required="required" id="Mota" class="form-control" rows="3" >{{$phim[0]->Mota}} </textarea>
+                <textarea required="required" name="Mota" class="form-control" rows="3" >{{$phim[0]->Mota}} </textarea>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Điểm</label>
@@ -63,14 +59,22 @@
               </div>
               <div class="form-group">
                 <label for="inputStatus">Thời lượng</label>
-                  <input type="time" value=""  name="Thoiluong" class="form-control {{ $errors->has('Thoiluong') ? ' is-invalid ' : ''}}">
-                  @if ($errors->has('Thoiluong'))
+                  <input type="time" value="{{$phim[0]->ThoiLuong}}"  name="ThoiLuong" class="form-control {{ $errors->has('ThoiLuong') ? ' is-invalid ' : ''}}">
+                  @if ($errors->has('ThoiLuong'))
                   <span class="invalid-feedback">
-                      <strong>{{ $errors->first('Thoiluong') }}</strong>
+                      <strong>{{ $errors->first('ThoiLuong') }}</strong>
                   </span>
                 @endif
-                </div>
-                
+              </div>
+              <div class="form-group">
+                <label >Trailer</label>
+                <input  value="{{$phim[0]->Trailer}}" type="text" class="form-control {{ $errors->has('Trailer') ? ' is-invalid ' : ''}}" class="custom-file-input" name="Trailer"/>
+                @if ($errors->has('Trailer'))
+                  <span class="invalid-feedback">
+                      <strong>{{ $errors->first('Trailer') }}</strong>
+                  </span>
+                @endif
+              </div>
             </div>
             <!-- /.card-body -->
           </div>
@@ -88,52 +92,45 @@
               <div class="form-group">
                 <label for="inputStatus">Đạo diễn</label>
                 <select class="form-control custom-select" name="Daodien">
-                  <option selected disabled>{{$phim[0]->Tendaodien}}</option>
-                  @foreach ($daodien as $item)
-                      <option>{{ $item->Tendaodien}}</option>
+                  <option selected disabled value="{{$phim[0]->daodien_id}}">{{$phim[0]->Tendaodien}}</option>
+                  @foreach ($daodien as $dd)
+                      <option value="{{ $dd->id}}">{{ $dd->Tendaodien}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputDescription">Danh sách diễn viên</label>
-                <textarea name="ds_dienien" class="form-control" rows="3" >{{$phim[0]->ds_dienvien}} </textarea>
+                <textarea name="dienvien" class="form-control" rows="3" >{{$phim[0]->Ds_dienvien}} </textarea>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Thể loại</label>
                 <select class="form-control custom-select" name="theloai">
-                  <option selected disabled>{{$phim[0]->Tentheloai}}</option>
-                  @foreach ($theloai as $item)
-                  <option>{{ $item->Tentheloai}}</option>
+                  <option selected disabled value="{{$phim[0]->theloai_id}}">{{$phim[0]->Tentheloai}}</option>
+                  @foreach ($theloai as $tl)
+                  <option value="{{ $tl->id}}">{{ $tl->Tentheloai}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Trạng thái phim</label>
                 <select class="form-control custom-select" name="Trangthai">
-                  <option selected disabled>{{$phim[0]->Tentrangthai}}</option>
-                  @foreach ($trangthai as $item)
-                      <option>{{ $item->Tentrangthai}}</option>
+                  <option selected disabled value="{{$phim[0]->trangthai_id}}">{{$phim[0]->Tentrangthai}}</option>
+                  @foreach ($trangthai as $tt)
+                      <option value="{{ $tt->id}}" >{{ $tt->Tentrangthai}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Định dạng phim</label>
                 <select class="form-control custom-select" name="Dinhdang">
-                  <option selected disabled>{{$phim[0]->Loaidinhdang}}</option>
-                  @foreach ($dinhdang as $item)
-                      <option>{{ $item->Loaidinhdang}}</option>
+                  <option selected disabled value="{{$phim[0]->dinhdang_id}}">{{$phim[0]->Loaidinhdang}}</option>
+                  @foreach ($dinhdang as $dd)
+                      <option value="{{ $dd->id}}">{{ $dd->Loaidinhdang}}</option>
                   @endforeach
                 </select>
               </div>
-              <div class="form-group">
-                <label >Trailer</label>
-                <input  value="{{$phim[0]->Trailer}}" type="text" class="form-control {{ $errors->has('Trailer') ? ' is-invalid ' : ''}}" class="custom-file-input" name="Trailer"/>
-                @if ($errors->has('Trailer'))
-                  <span class="invalid-feedback">
-                      <strong>{{ $errors->first('Trailer') }}</strong>
-                  </span>
-                @endif
-              </div>
+              
+              
 
             </div>
             <!-- /.card-body -->

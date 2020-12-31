@@ -244,7 +244,7 @@ class PhimDatabaseSeeder extends Seeder
             'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'ijwyhBl15ZA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Triệu tử long', 'Hinhanh'=>'XinZhao.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'YGdJnLMSOA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1']
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'-YGdJnLMSOA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1']
 		
             ]);
 	}

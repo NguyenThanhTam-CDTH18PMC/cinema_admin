@@ -27,12 +27,13 @@ class PhimRequest extends FormRequest
             'Hinhanh' => 'bail | required | max:2048',
             'Tenphim' => 'bail | required',
             'Mota' => ' required',
+            'Diem' => ' required',
             'theloai' => ' required',
             'Trangthai' => ' required',
             'Dinhdang' => ' required',
             'Daodien' => ' required',
             'dienvien' =>' required',
-            'Thoiluong' => ' required',
+            'ThoiLuong' => ' required',
             'Trailer' => 'required'
         ];
     }

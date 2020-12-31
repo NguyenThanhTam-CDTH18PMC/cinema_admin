@@ -34,7 +34,7 @@ Route::group(['middleware' => ['CheckAdminLogin']], function () {
         // Trang đạo diễn
     Route::resource('daodien','DaoDienController');
         // Trang diễn viên
-    Route::resource('dienvien','DienVienController');
+    // Route::resource('dienvien','DienVienController');
         // Trang Thể loại phim
     Route::resource('theloai','TheLoaiController');
         // Trang Phim

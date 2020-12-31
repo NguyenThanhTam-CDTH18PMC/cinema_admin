@@ -41,13 +41,14 @@ class PhimController extends Controller
         $daodien   = DB::table('dao_diens')->get();
         $theloai   = DB::table('the_loais')->get();
         $trangthai = DB::table('trang_thais')->get();
-        $dienvien  = DB::table('dien_viens')->get();
+        // $dienvien  = DB::table('dien_viens')->get();
         $dinhdang  = DB::table('dinh_dangs')->get();
         return view('data.Trang_Phim.them_phim',["daodien"=>$daodien,
                                                  "theloai"=>$theloai,
                                                  "trangthai"=>$trangthai,
-                                                 "dinhdang"=>$dinhdang,
-                                                 "dienvien"=>$dienvien]);
+                                                 "dinhdang"=>$dinhdang
+                                                //  ,"dienvien"=>$dienvien]);
+                                                ]);
     }
 
     /**
@@ -76,6 +77,8 @@ class PhimController extends Controller
             'Tenphim' => $request['Tenphim'],
             'Hinhanh' => $request['Hinhanh'],
             'Mota' => $request['Mota'],
+            'Diem' => $request['Diem'],
+            'Ds_dienvien' => $request['dienvien'],
             'Trailer' => $request['Trailer'],
             'ThoiLuong' => $request['Thoiluong'].':00',
             'dinhdang_id' => $request['Dinhdang'],
@@ -84,7 +87,6 @@ class PhimController extends Controller
             'theloai_id' => $request['theloai'],
         ]);
 
-    
         return redirect()->route('phim.index');
     }
 
@@ -100,10 +102,9 @@ class PhimController extends Controller
                 ->join('the_loais','phims.theloai_id','=','the_loais.id')
                 ->join('trang_thais','phims.trangthai_id','=','trang_thais.id')
                 ->join('dinh_dangs','phims.dinhdang_id','=','dinh_dangs.id')
-                ->join('ds_dienviens','phims.id','=','ds_dienviens.phim_id')
                 ->join('dao_diens','phims.daodien_id','=','dao_diens.id')
                 ->select('phims.id', 'phims.Tenphim', 'phims.Hinhanh', 'phims.Mota', 'phims.Trailer',
-                   'the_loais.Tentheloai', 'ds_dienviens.ds_dienvien','phims.Diem', 'Phims.ThoiLuong',
+                   'the_loais.Tentheloai', 'phims.Ds_dienvien','phims.Diem', 'Phims.ThoiLuong',
                    'trang_thais.Tentrangthai', 'dinh_dangs.Loaidinhdang', 'dao_diens.Tendaodien')
                 ->where('phims.id',"=",$id)
                 ->get();
@@ -127,11 +128,11 @@ class PhimController extends Controller
                     ->join('the_loais','phims.theloai_id','=','the_loais.id')
                     ->join('trang_thais','phims.trangthai_id','=','trang_thais.id')
                     ->join('dinh_dangs','phims.dinhdang_id','=','dinh_dangs.id')
-                    ->join('ds_dienviens','phims.id','=','ds_dienviens.phim_id')
                     ->join('dao_diens','phims.daodien_id','=','dao_diens.id')
                     ->select('phims.id', 'phims.Tenphim', 'phims.Hinhanh', 'phims.Mota', 'phims.Trailer',
-                    'the_loais.Tentheloai', 'ds_dienviens.ds_dienvien','phims.Diem', 'Phims.ThoiLuong',
-                    'trang_thais.Tentrangthai', 'dinh_dangs.Loaidinhdang', 'dao_diens.Tendaodien')
+                    'the_loais.Tentheloai', 'phims.Ds_dienvien','phims.Diem', 'phims.ThoiLuong',
+                    'trang_thais.Tentrangthai', 'dinh_dangs.Loaidinhdang', 'dao_diens.Tendaodien',
+                    'phims.daodien_id', 'phims.theloai_id', 'phims.trangthai_id','phims.dinhdang_id')
                     ->where('phims.id',"=",$id)
                     ->get();
         return view('data.Trang_Phim.sua_phim',['phim'=>$phim,
@@ -168,21 +169,15 @@ class PhimController extends Controller
         $phim->Tenphim = $request['Tenphim'];
         $phim->Hinhanh = $request['Hinhanh'];
         $phim->Mota = $request['Mota'];
+        $phim->Ds_dienvien = $request['dienvien'];
         $phim->Trailer = $request['Trailer'];
-        $phim->ThoiLuong = $request['Thoiluong'].':00';
+        $phim->ThoiLuong = $request['ThoiLuong'].':00';
         $phim->dinhdang_id = $request['Dinhdang'];
         $phim->daodien_id = $request['Daodien'];
         $phim->trangthai_id = $request['Trangthai'];
         $phim->theloai_id = $request['theloai'];
 
-        $ds_dienvien = DB::table('ds_dienviens')
-                        ->where('phim_id','=',$id)
-                        ->get();
-
-        $ds_dienvien->ds_dienvien = $request['ds_dienvien'];
-
         $phim->save();
-        $ds_dienvien->save();
 
         return redirect()->route('phim.index');
     }

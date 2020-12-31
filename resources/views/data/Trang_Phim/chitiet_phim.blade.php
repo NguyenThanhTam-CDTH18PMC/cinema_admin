@@ -40,7 +40,7 @@
                     <p><b>Đạo diễn:  </b>{{ $phim[0]->Tendaodien }}</p>
                   </div>
                   <div class="form-group">
-                    <p><b>Danh sách diễn viên:  </b>{{ $phim[0]->ds_dienvien }}</p>
+                    <p><b>Danh sách diễn viên:  </b>{{ $phim[0]->Ds_dienvien }}</p>
                   </div>
                   <div class="form-group">
                     <p><b>Thời lượng:  </b>{{ $phim[0]->ThoiLuong }}</p>

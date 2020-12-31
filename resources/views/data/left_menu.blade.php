@@ -75,7 +75,7 @@
           </li>
           <!--endtables-->
           <!--tables-dao-dien-->
-          <li class="nav-item has-treeview">
+          {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>Diễn viên
@@ -89,7 +89,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <!--endtables-->
           <!--tables-thong-tin-phim-->
           <li class="nav-item has-treeview">

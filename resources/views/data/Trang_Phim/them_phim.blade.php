@@ -54,15 +54,15 @@
               </div>
               <div class="form-group">
                 <label for="inputStatus" >Thể loại</label>
-                <select name="theloai" class="form-control {{ $errors->has('Theloai') ? ' is-invalid ' : ''}}">
+                <select name="theloai" class="form-control {{ $errors->has('theloai') ? ' is-invalid ' : ''}}">
                   <option selected disabled>----Chọn thể loại----</option>
                       @foreach ($theloai as $tl)
                         <option value="{{$tl->id}}">{{$tl->Tentheloai}}</option>
                       @endforeach
                 </select>
-                @if ($errors->has('Theloai'))
+                @if ($errors->has('theloai'))
                   <span class="invalid-feedback">
-                      <strong>{{ $errors->first('Theloai') }}</strong>
+                      <strong>{{ $errors->first('theloai') }}</strong>
                   </span>
                 @endif
               </div>
@@ -124,7 +124,7 @@
               </div>
               <div class="form-group">
                 <label for="inputStatus">Diễn viên</label>
-                <input type="text" name="Tenphim" class="form-control {{ $errors->has('Tenphim')? ' is-invalid': ''}}">
+                <input type="text" name="dienvien" class="form-control {{ $errors->has('dienvien')? ' is-invalid': ''}}">
                 {{-- <select class="form-control {{ $errors->has('dienvien') ? ' is-invalid ' : ''}}" name="dienvien">
                   <option selected disabled>----Chọn diễn viên----</option>
                   @foreach ($dienvien as $dv)
@@ -139,31 +139,39 @@
               </div>
               <div class="form-group">
                 <label for="inputStatus">Thời lượng</label>
-                  <input type="time" value=""  name="Thoiluong" class="form-control {{ $errors->has('Thoiluong') ? ' is-invalid ' : ''}}">
-                  @if ($errors->has('Thoiluong'))
+                  <input type="time" value=""  name="ThoiLuong" class="form-control {{ $errors->has('ThoiLuong') ? ' is-invalid ' : ''}}">
+                  @if ($errors->has('ThoiLuong'))
                   <span class="invalid-feedback">
-                      <strong>{{ $errors->first('Thoiluong') }}</strong>
+                      <strong>{{ $errors->first('ThoiLuong') }}</strong>
                   </span>
                 @endif
                 </div>
               <div class="form-group">
                 <label >Hình ảnh</label>
-                <input enctype="multipart/form-data" accept="*.png|*.jpg|*.jpeg" value="" type="file" class="form-control {{ $errors->has('Hinhanh') ? ' is-invalid ' : ''}}" class="custom-file-input" name="Hinhanh"/>
+                <input enctype="multipart/form-data" name="Hinhanh" accept="*.png|*.jpg|*.jpeg" value="" type="file" class="form-control {{ $errors->has('Hinhanh') ? ' is-invalid ' : ''}}" class="custom-file-input"/>
                 @if ($errors->has('Hinhanh'))
                   <span class="invalid-feedback">
                       <strong>{{ $errors->first('Hinhanh') }}</strong>
                   </span>
                 @endif
               </div>
-
               <div class="form-group">
                 <label >Trailer</label>
-                <input type="text" class="form-control {{ $errors->has('Trailer') ? ' is-invalid ' : ''}}" class="custom-file-input" name="Trailer"/>
+                <input type="text" name="Trailer" class="form-control {{ $errors->has('Trailer') ? ' is-invalid ' : ''}}" class="custom-file-input" />
                 @if ($errors->has('Trailer'))
                   <span class="invalid-feedback">
                       <strong>{{ $errors->first('Trailer') }}</strong>
                   </span>
                 @endif
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Điểm</label>
+                <select class="form-control custom-select" name="Diem">
+                  <option selected disabled>----Chọn----</option>
+                  @for($i=0; $i <= 10; $i++)
+                      <option value="{{$i}}">{{ $i}}</option>
+                  @endfor
+                </select>
               </div>
 
             </div>
