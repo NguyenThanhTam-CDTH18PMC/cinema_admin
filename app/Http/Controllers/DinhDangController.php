@@ -60,7 +60,7 @@ class DinhDangController extends Controller
          $ds_gia = DB::table('gias')->get();
          $dinhdang = DB::table('dinh_dangs')
                  ->join('gias','dinh_dangs.gia_id','=','gias.id')
-                 ->select('dinh_dangs.id','dinh_dangs.Loaidinhdang', 'gias.giatien')
+                 ->select('dinh_dangs.id','dinh_dangs.Loaidinhdang','dinh_dangs.Gia_id', 'gias.giatien')
                 ->where('dinh_dangs.id','=',$id)
                  ->get();
          return view('data.Trang_DinhDangPhim.sua_dinhdangphim',['dinhdang'=>$dinhdang,
@@ -78,7 +78,7 @@ class DinhDangController extends Controller
     public function update(Request $request, $id)
     {
         $dinhdang = DinhDang::find($id);
-        $dinhdang->Loaidinhdang = $request['Loaidinhdang'];
+        $dinhdang->Loaidinhdang = $request['loaidinhdang'];
         $dinhdang->gia_id = $request['gia'];
         $dinhdang->save();
 

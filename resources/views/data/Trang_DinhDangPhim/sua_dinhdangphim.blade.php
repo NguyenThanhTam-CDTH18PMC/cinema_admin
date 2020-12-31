@@ -41,9 +41,8 @@
               <div class="form-group">
                 <label for="inputStatus">Giá</label>
                 <select class="form-control custom-select" name="gia">
-                  <option selected disabled>----Chọn giá----</option>
                       @foreach ($ds_gia as $gia)
-                          <option value="{{$gia->id}}">{{$gia->giatien}}</option>
+                          <option   @if( $gia->id == $dinhdang[0]->Gia_id) elected @endif value="{{$gia->id}}">{{$gia->giatien}}</option>
                       @endforeach
                 </select>
               </div>
