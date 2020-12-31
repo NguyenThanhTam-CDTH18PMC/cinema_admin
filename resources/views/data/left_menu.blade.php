@@ -145,7 +145,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('dinhdang.create') }}" class="nav-link">
+                <a href="{{ route('dinhdang.them') }}" class="nav-link">
                   
                   <p>Thêm</p>
                 </a>
@@ -171,7 +171,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('trangthai.create') }}" class="nav-link">
+                <a href="{{ route('trangthai.them') }}" class="nav-link">
                   <p>Thêm</p>
                 </a>
               </li>

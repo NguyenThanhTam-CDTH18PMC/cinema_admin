@@ -23,18 +23,28 @@ Route::group(['middleware' => ['CheckAdminLogin']], function () {
         'create'=> 'taikhoan.them',
         'store'=> 'taikhoan.luu'
     ]);
-
         // Trang định dạng
-    Route::resource('dinhdang','DinhDangController');
-    //Trang trạng thái
-    Route::resource('trangthai','TrangThaiController');
-
+    Route::resource('dinhdang','DinhDangController')->names([
+        'destroy'=> 'dinhdang.xoa',
+        'edit'=> 'dinhdang.sua',
+        'update'=> 'dinhdang.capnhat',
+        'create'=> 'dinhdang.them',
+        'store'=> 'dinhdang.luu'
+     ]);
+         //Trang trạng thái
+    Route::resource('trangthai','TrangThaiController')->names([
+        'destroy'=> 'trangthai.xoa',
+        'edit'=> 'trangthai.sua',
+        'update'=> 'trangthai.capnhat',
+        'create'=> 'trangthai.them',
+        'store'=> 'trangthai.luu'
+     ]);
     
             // ------ Tâm ------
         // Trang đạo diễn
     Route::resource('daodien','DaoDienController');
         // Trang diễn viên
-    // Route::resource('dienvien','DienVienController');
+    Route::resource('dienvien','DienVienController');
         // Trang Thể loại phim
     Route::resource('theloai','TheLoaiController');
         // Trang Phim
