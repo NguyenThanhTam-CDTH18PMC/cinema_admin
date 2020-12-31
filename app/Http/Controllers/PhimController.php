@@ -75,7 +75,7 @@ class PhimController extends Controller
 
         $phim = Phim::create([
             'Tenphim' => $request['Tenphim'],
-            'Hinhanh' => $request['Hinhanh'],
+            'Hinhanh' => $filenameToStore,
             'Mota' => $request['Mota'],
             'Diem' => $request['Diem'],
             'Ds_dienvien' => $request['dienvien'],
@@ -149,7 +149,8 @@ class PhimController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PhimRequest $request, $id)
+
+    public function update(Request $request, $id)
     {
         if($request->hasFile('Hinhanh'))
         {
@@ -160,18 +161,34 @@ class PhimController extends Controller
             $path = $request->file('Hinhanh')->storeAs('',$filenameToStore);
         }
         else
-        {
-            $filenameToStore = 'noimage.png';
+        {       
+             $phim = Phim::find($id);
+
+            $phim->Tenphim = $request['Tenphim'];
+            $phim->Hinhanh = $phim->Hinhanh;
+            $phim->Mota = $request['Mota'];
+            $phim->Ds_dienvien = $request['dienvien'];
+            $phim->Trailer = $request['Trailer'];
+            $phim->ThoiLuong = $request['ThoiLuong'];
+            $phim->dinhdang_id = $request['Dinhdang'];
+            $phim->daodien_id = $request['Daodien'];
+            $phim->trangthai_id = $request['Trangthai'];
+            $phim->theloai_id = $request['theloai'];
+    
+            $phim->save();
+    
+            return redirect()->route('phim.index');
+            return $request;
         }
 
         $phim = Phim::find($id);
 
         $phim->Tenphim = $request['Tenphim'];
-        $phim->Hinhanh = $request['Hinhanh'];
+        $phim->Hinhanh = $filenameToStore;
         $phim->Mota = $request['Mota'];
         $phim->Ds_dienvien = $request['dienvien'];
         $phim->Trailer = $request['Trailer'];
-        $phim->ThoiLuong = $request['ThoiLuong'].':00';
+        $phim->ThoiLuong = $request['ThoiLuong'];
         $phim->dinhdang_id = $request['Dinhdang'];
         $phim->daodien_id = $request['Daodien'];
         $phim->trangthai_id = $request['Trangthai'];
@@ -180,6 +197,7 @@ class PhimController extends Controller
         $phim->save();
 
         return redirect()->route('phim.index');
+        return $request;
     }
 
     /**

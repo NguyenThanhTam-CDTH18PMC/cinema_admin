@@ -45,7 +45,7 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root' => public_path('dist/img/Phim'),
+            'root' => public_path('Image'),
         ],
 
         'public' => [

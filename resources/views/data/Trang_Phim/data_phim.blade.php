@@ -69,7 +69,7 @@
                 <tbody>
                   <tr>
                       <td class="text-center">
-                          <img  style="width: 100px" src="{{asset('public/image')}}/{{$p->Hinhanh}}">
+                          <img  style="width: 100px" src="{{asset('public/Image')}}/{{$p->Hinhanh}}">
                       </td>
                       <td class="text-center">
                             {{$p->Tenphim}}  

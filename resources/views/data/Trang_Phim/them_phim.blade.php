@@ -20,7 +20,7 @@
     </section>
 
     <!-- Main content -->
-    <form class="content" action="{{ route('phim.store') }}" method="POST">
+    <form enctype="multipart/form-data" class="content" action="{{ route('phim.store') }}" method="POST">
       @csrf
       <div class="row">
         <div class="col-md-6">
@@ -39,7 +39,7 @@
                 <input type="text" name="Tenphim" class="form-control {{ $errors->has('Tenphim')? ' is-invalid': ''}}">
                   @if ($errors->has('Tenphim'))
                       <span class="invalid-feedback">
-                      <strong>{{ $errors->first('Hinhanh') }}</strong>
+                      <strong>{{ $errors->first('Tenphim') }}</strong>
                       </span>
                   @endif
               </div>

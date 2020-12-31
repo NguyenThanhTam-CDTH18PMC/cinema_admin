@@ -38,7 +38,7 @@ class TheLoaiController extends Controller
     public function store(Request $request)
     {
         $vali_theloai = $request->validate([
-            "Tentheloai" => 'required | min: 5 | alpha'
+            "Tentheloai" => 'required | unique:the_loais,Tentheloai|min:5 '
         ]);
         $theloai = TheLoai::create([$vali_theloai]);
         return redirect()->route('theloai.index');

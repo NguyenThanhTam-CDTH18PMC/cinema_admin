@@ -30,7 +30,7 @@
             </div>
             <div class="card-body row">
                 <div class="col-sm-3">
-                  <img  style="width: 200px" src="{{asset('public/image')}}/{{$phim[0]->Hinhanh}}">
+                  <img  style="width: 200px" src="{{asset('public/Image')}}/{{$phim[0]->Hinhanh}}">
                 </div>
                 <div class="col-sm-9">
                   <div>

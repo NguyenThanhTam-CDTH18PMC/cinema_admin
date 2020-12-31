@@ -31,7 +31,12 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Tên thể loại</label>
-                <input type="text" class="form-control" name="tentheloai">
+                <input type="text" class="form-control {{ $errors->has('Tentheloai')? ' is-invalid': ''}}" name="Tentheloai">
+                @if ($errors->has('Tentheloai'))
+                      <span class="invalid-feedback">
+                      <strong>{{ $errors->first('Tentheloai') }}</strong>
+                      </span>
+                  @endif
               </div>
             </div>
             <!-- /.card-body -->

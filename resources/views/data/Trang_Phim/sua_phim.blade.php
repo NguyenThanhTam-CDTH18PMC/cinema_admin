@@ -19,7 +19,7 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- Main content -->
-    <form class="content" action="{{ route('phim.update',$phim[0]->id) }}" method="POST">
+    <form enctype="multipart/form-data" class="content" action="{{ route('phim.update',$phim[0]->id) }}" method="POST">
       @csrf
       @method('PUT')
       <div class="row">
@@ -33,7 +33,7 @@
             <div class="card-body">
               <div class="form-group">
                 <label >Hình ảnh</label>
-                <input enctype="multipart/form-data"  name="Hinhanh" accept="*.png|*.jpg|*.jpeg" value=""  type="file" class="form-control {{ $errors->has('Hinhanh') ? ' is-invalid ' : ''}}" class="custom-file-input"/>
+                <input enctype="multipart/form-data" name="Hinhanh" accept="*.png|*.jpg|*.jpeg" value=""  type="file" class="form-control {{ $errors->has('Hinhanh') ? ' is-invalid ' : ''}}" class="custom-file-input"/>
                 @if ($errors->has('Hinhanh'))
                   <span class="invalid-feedback">
                       <strong>{{ $errors->first('Hinhanh') }}</strong>
@@ -92,9 +92,8 @@
               <div class="form-group">
                 <label for="inputStatus">Đạo diễn</label>
                 <select class="form-control custom-select" name="Daodien">
-                  <option selected disabled value="{{$phim[0]->daodien_id}}">{{$phim[0]->Tendaodien}}</option>
                   @foreach ($daodien as $dd)
-                      <option value="{{ $dd->id}}">{{ $dd->Tendaodien}}</option>
+                      <option @if( $dd->id == $phim[0]->daodien_id) selected @endif value="{{ $dd->id}}">{{ $dd->Tendaodien}}</option>
                   @endforeach
                 </select>
               </div>
@@ -105,27 +104,24 @@
               <div class="form-group">
                 <label for="inputStatus">Thể loại</label>
                 <select class="form-control custom-select" name="theloai">
-                  <option selected disabled value="{{$phim[0]->theloai_id}}">{{$phim[0]->Tentheloai}}</option>
                   @foreach ($theloai as $tl)
-                  <option value="{{ $tl->id}}">{{ $tl->Tentheloai}}</option>
+                  <option @if( $tl->id == $phim[0]->theloai_id) selected @endif value="{{ $tl->id}}">{{ $tl->Tentheloai}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Trạng thái phim</label>
                 <select class="form-control custom-select" name="Trangthai">
-                  <option selected disabled value="{{$phim[0]->trangthai_id}}">{{$phim[0]->Tentrangthai}}</option>
                   @foreach ($trangthai as $tt)
-                      <option value="{{ $tt->id}}" >{{ $tt->Tentrangthai}}</option>
+                      <option @if( $tt->id == $phim[0]->trangthai_id) selected @endif value="{{ $tt->id}}" >{{ $tt->Tentrangthai}}</option>
                   @endforeach
                 </select>
               </div>
               <div class="form-group">
                 <label for="inputStatus">Định dạng phim</label>
                 <select class="form-control custom-select" name="Dinhdang">
-                  <option selected disabled value="{{$phim[0]->dinhdang_id}}">{{$phim[0]->Loaidinhdang}}</option>
                   @foreach ($dinhdang as $dd)
-                      <option value="{{ $dd->id}}">{{ $dd->Loaidinhdang}}</option>
+                      <option @if( $dd->id == $phim[0]->dinhdang_id) selected @endif value="{{ $dd->id}}">{{ $dd->Loaidinhdang}}</option>
                   @endforeach
                 </select>
               </div>
