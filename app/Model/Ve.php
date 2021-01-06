@@ -13,13 +13,19 @@ class Ve extends Model
     
     protected $fillable = [
 		'dsve_id',
-		'ghe_id',
+        'ghe_id',
+        'suatchieu_id',
         'phim_id',
+        'NgayChieu',
 		'Thanhtien'
     ];
 
     protected function danhsachve(){
     	$this->belongsTo('Model\DsVe','dsve_id');
+    }
+
+    protected function suatchieu(){
+    	$this->belongsTo('Model\SuatChieu','dsve_id');
     }
 
     protected function phim(){

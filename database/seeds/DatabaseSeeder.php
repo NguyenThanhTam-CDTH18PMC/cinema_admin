@@ -350,12 +350,12 @@ class SuatChieuDatabaseSeeder extends Seeder
 {
 	public function run() {
 		DB::table('suat_chieus')->insert([
-			['GioChieu'=>'09:00:00','Ngaychieu'=>'2020-11-20',],
-            ['GioChieu'=>'11:00:00','Ngaychieu'=>'2020-11-20',],
-			['GioChieu'=>'13:00:00','Ngaychieu'=>'2020-11-20',],
-			['GioChieu'=>'09:00:00','Ngaychieu'=>'2020-11-20',],
-			['GioChieu'=>'11:00:00','Ngaychieu'=>'2020-11-20',],
-			['GioChieu'=>'13:00:00','Ngaychieu'=>'2020-11-20',]
+			['GioChieu'=>'09:00:00'],
+            ['GioChieu'=>'11:00:00'],
+			['GioChieu'=>'13:00:00'],
+			['GioChieu'=>'15:00:00'],
+			['GioChieu'=>'17:00:00'],
+			['GioChieu'=>'19:00:00']
 		]);
 	}
 }
@@ -363,12 +363,19 @@ class LichchieuDatabaseSeeder extends Seeder
 {
 	public function run() {
 		DB::table('lich_chieus')->insert([
-			['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'1'],
-			['phim_id'=>'2','rap_id'=>'1','suatchieu_id'=>'2'],
-			['phim_id'=>'3','rap_id'=>'1','suatchieu_id'=>'3'],
-			['phim_id'=>'1','rap_id'=>'2','suatchieu_id'=>'4'],
-			['phim_id'=>'2','rap_id'=>'2','suatchieu_id'=>'5'],
-			['phim_id'=>'3','rap_id'=>'2','suatchieu_id'=>'6']
+			['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'2','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'3','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'1','rap_id'=>'2','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'2','rap_id'=>'2','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-01'],
+            ['phim_id'=>'3','rap_id'=>'2','suatchieu_id'=>'6', 'NgayChieu'=>'2021-01-01'],
+            
+            ['phim_id'=>'4','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'5','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'6','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'4','rap_id'=>'2','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'5','rap_id'=>'2','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-01'],
+			['phim_id'=>'6','rap_id'=>'2','suatchieu_id'=>'6', 'NgayChieu'=>'2021-01-01']
 		]);
 	}
 }
@@ -385,9 +392,9 @@ class VeDatabaseSeeder extends Seeder
 {
 	public function run() {
 		DB::table('ves')->insert([
-			['dsve_id'=>'1','ghe_id'=>'1', 'phim_id'=>'1','Thanhtien'=>'40000',],
-			['dsve_id'=>'2','ghe_id'=>'2', 'phim_id'=>'2','Thanhtien'=>'40000'],
-			['dsve_id'=>'2','ghe_id'=>'4', 'phim_id'=>'2','Thanhtien'=>'40000'],
+			['dsve_id'=>'1','ghe_id'=>'1','phim_id'=>'1', 'Thanhtien'=>'40000', 'suatchieu_id'=>'1', 'NgayChieu' => '2021-01-01'],
+			['dsve_id'=>'2','ghe_id'=>'2','phim_id'=>'2', 'Thanhtien'=>'40000', 'suatchieu_id'=>'2', 'NgayChieu' => '2021-01-01'],
+			['dsve_id'=>'2','ghe_id'=>'4','phim_id'=>'2', 'Thanhtien'=>'40000', 'suatchieu_id'=>'3', 'NgayChieu' => '2021-01-01']
 		]);
 	}
 }

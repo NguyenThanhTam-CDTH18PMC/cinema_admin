@@ -17,11 +17,13 @@ class CreateLichChieusTable extends Migration
             $table->integer('phim_id')->unsigned()->index();
             $table->integer('rap_id')->unsigned()->index();
             $table->integer('suatchieu_id')->unsigned()->index();
+            $table->date('NgayChieu');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->primary(['phim_id','rap_id']);
             $table->foreign('suatchieu_id')->references('id')->on('suat_chieus');
+            $table->foreign('phim_id')->references('id')->on('phims');
+            $table->foreign('rap_id')->references('id')->on('raps');
         });
     }
 

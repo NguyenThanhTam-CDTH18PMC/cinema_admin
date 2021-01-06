@@ -15,7 +15,8 @@ class LichChieu extends Model
     protected $fillable = [
 		'phim_id',
         'rap_id',
-        'suatchieu_id'
+		'suatchieu_id',
+		'NgayChieu'
     ];
 
     protected function phim()

@@ -16,7 +16,6 @@ class CreateSuatChieusTable extends Migration
         Schema::create('suat_chieus', function (Blueprint $table) {
             $table->increments('id');
             $table->time('GioChieu');
-            $table->date('NgayChieu');
             $table->timestamps();
             $table->softDeletes();
         });
