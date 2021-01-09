@@ -17,10 +17,10 @@ class LichChieuController extends Controller
     public function index()
     {
        $SuatChieu = DB::table('suat_chieus')
-                ->join('raps','raps.id','=','suat_chieus.rap_id')
-                ->join('phims','phims.id','=','suat_chieus.phim_id')
-            
-                ->select('suat_chieus.id','suat_chieus.GioChieu','raps.Tenrap','suat_chieus.rap_id','suat_chieus.phim_id','phims.Tenphim','raps.chinhanh','suat_chieus.NgayChieu')
+                ->join('lich_chieus','lich_chieus.suatchieu_id','=','suat_chieus.id')
+                ->join('raps','raps.id','=','lich_chieus.rap_id')
+                ->join('phims','phims.id','=','lich_chieus.phim_id')
+                ->select('suat_chieus.id','suat_chieus.GioChieu','raps.Tenrap','lich_chieus.rap_id','lich_chieus.phim_id','phims.Tenphim','lich_chieus.NgayChieu')
                 ->get();
         return response()->json($SuatChieu, 200);
     }

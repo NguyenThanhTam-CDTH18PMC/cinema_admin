@@ -364,12 +364,16 @@ class LichchieuDatabaseSeeder extends Seeder
 	public function run() {
 		DB::table('lich_chieus')->insert([
 			['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-01'],
+            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
+            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],
+            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-01'],
 			['phim_id'=>'2','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
 			['phim_id'=>'3','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],
 			['phim_id'=>'1','rap_id'=>'2','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-01'],
 			['phim_id'=>'2','rap_id'=>'2','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-01'],
             ['phim_id'=>'3','rap_id'=>'2','suatchieu_id'=>'6', 'NgayChieu'=>'2021-01-01'],
-            
+            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-02'],
+            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-02'],
             ['phim_id'=>'4','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-01'],
 			['phim_id'=>'5','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
 			['phim_id'=>'6','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],

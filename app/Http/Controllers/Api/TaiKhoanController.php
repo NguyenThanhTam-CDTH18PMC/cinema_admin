@@ -46,8 +46,7 @@ class TaiKhoanController extends Controller
      */
     public function show(TaiKhoan $taikhoan)
     {
-        $chitiet = $taikhoan;
-
+        //$chitiet = $taikhoan;
         return ['id' => $taikhoan->id,
                 'Ten_TK' => $taikhoan->Ten_TK,
                 'HoTen' => $taikhoan->HoTen,

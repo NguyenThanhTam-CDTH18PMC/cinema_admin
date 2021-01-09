@@ -18,10 +18,11 @@ class VeController extends Controller
     {
         $ve = DB::table('ves')
                 ->join('phims','ves.phim_id','=','phims.id')
+                ->join('ds_ves','ds_ves.id','=','ves.dsve_id')
                 ->join('ghes','ves.ghe_id','=','ghes.id')
-                ->join('dao_diens','phims.daodien_id','=','dao_diens.id')
+                ->join('suat_chieus','suat_chieus.id','=','ves.suatchieu_id')
                 ->join('raps','raps.id','=','ghes.rap_id')
-                ->select('phims.Tenphim','phims.Hinhanh','raps.Tenrap','ves.Thanhtien','ghes.Soghe', 'ves.dsve_id', 'ves.suatchieu_id', 'ves.ghe_id', 'ghes.rap_id')
+                ->select('ves.id','phims.Tenphim','phims.Hinhanh','raps.Tenrap','ves.Thanhtien','ghes.Soghe', 'ds_ves.taikhoan_id', 'ves.suatchieu_id', 'ves.ghe_id', 'ghes.rap_id','ves.NgayChieu','suat_chieus.GioChieu')
                 ->get();
         return response()->json($ve, 200);
     }
@@ -40,6 +41,7 @@ class VeController extends Controller
             'phim_id' => $request['phim_id'],
             'suatchieu_id' => $request['suatchieu_id'],
             'Thanhtien' => $request['thanhtien'],
+            'NgayChieu' => $request['ngaychieu'],
         ]);
     }
 
