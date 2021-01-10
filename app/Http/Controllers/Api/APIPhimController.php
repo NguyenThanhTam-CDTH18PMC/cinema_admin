@@ -24,7 +24,7 @@ class APIPhimController extends Controller
                  'trang_thais.Tentrangthai', 'phims.Diem','phims.Mota','dinh_dangs.LoaiDinhdang',
                  'phims.Trailer', 'dao_diens.Tendaodien', 'phims.Thoiluong')
                 ->orderBy('id')
-                ->paginate(5);
+                ->get();
         return response()->json($phim,200,['Content-type'=>'application/json;charset=utf-8'],JSON_UNESCAPED_UNICODE);
     }
 
