@@ -15,7 +15,7 @@ class DsVeController extends Controller
      */
     public function index()
     {
-       $dsve = DsVe::paginate(1);
+       $dsve = DsVe::paginate(5);
         return view("data.Trang_DanhSachVe.data_dsve",['dsve'=>$dsve]);
     }
 
