@@ -188,63 +188,63 @@ class PhimDatabaseSeeder extends Seeder
 	public function run() {
 		DB::table('phims')->insert([
 			['Tenphim'=>'Dios', 'Hinhanh'=>'Adios.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-			'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'hQj_vwovvrs','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1', 'daodien_id'=>'1','trangthai_id'=>'1','theloai_id'=>'1'],     
+			'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'hQj_vwovvrs','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1', 'daodien_id'=>'1','trangthai_id'=>'1','theloai_id'=>'1'],     
             ['Tenphim'=>'Alice', 'Hinhanh'=>'Alice.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'3xBd8wXlj9o','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'2','trangthai_id'=>'1','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'3xBd8wXlj9o','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'2','trangthai_id'=>'1','theloai_id'=>'1'],
             
             ['Tenphim'=>'Bố Già', 'Hinhanh'=>'BoGia.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'2zSzDlaN-9w','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'3','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'10', 'Trailer'=>'2zSzDlaN-9w','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'3','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Emily In Paris', 'Hinhanh'=>'EmilyInParis.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'bagpW4TbVQY','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'], 
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'bagpW4TbVQY','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'], 
             
             ['Tenphim'=>'A Trash Truck', 'Hinhanh'=>'ATrashTruck.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'i2UT4DQUfMg','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'2','trangthai_id'=>'1','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'6', 'Trailer'=>'i2UT4DQUfMg','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'2','trangthai_id'=>'1','theloai_id'=>'1'],
             
             ['Tenphim'=>'Im Your Women', 'Hinhanh'=>'ImYourWomen.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'fAveuCPBYSw','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'fAveuCPBYSw','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Kimmy', 'Hinhanh'=>'Kimmy.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'Hl4bOuGNMwo','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'2','trangthai_id'=>'1','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'Hl4bOuGNMwo','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'2','trangthai_id'=>'1','theloai_id'=>'1'],
             
             ['Tenphim'=>'Oh! My Gran', 'Hinhanh'=>'OhMyGran.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'7h-sUzb1YGg','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'3','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'7h-sUzb1YGg','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'3','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Start Up', 'Hinhanh'=>'StartUp.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'Vx4pWud8luk','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'Vx4pWud8luk','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'],
             
             ['Tenphim'=>'Sweet Home', 'Hinhanh'=>'SweetHome.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'7rI56NmD33Y','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'7rI56NmD33Y','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'TorBaaz', 'Hinhanh'=>'TorBaaz.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'stbAOQiNMdk','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'stbAOQiNMdk','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'The Croods', 'Hinhanh'=>'TheCroods.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'GkXeVIfbJOw','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'6', 'Trailer'=>'GkXeVIfbJOw','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'],
             
             ['Tenphim'=>'Winter War', 'Hinhanh'=>'WinterWar.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'jtpp0ojz7ks','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'16', 'Trailer'=>'jtpp0ojz7ks','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Words On BathRoom', 'Hinhanh'=>'WordsOnBathRoom.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'_rjAHs9HIcA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'_rjAHs9HIcA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Black Bear', 'Hinhanh'=>'BlackBear.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'1_gCDYMGnng','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'3','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'1_gCDYMGnng','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'3','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Wonder Women', 'Hinhanh'=>'WWM86.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'Vk-gqL3c5qU','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'10', 'Trailer'=>'Vk-gqL3c5qU','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'4','trangthai_id'=>'1','theloai_id'=>'1'],
            
             ['Tenphim'=>'Lời nói khắc trong tim', 'Hinhanh'=>'YourName.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'KiCn0UKtOuc','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'16', 'Trailer'=>'KiCn0UKtOuc','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Patients Of Sant', 'Hinhanh'=>'PatientsOfSant.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'7tsZxJidn4o','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'7tsZxJidn4o','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Phi vụ hoàn lương', 'Hinhanh'=>'PhiVuHoanLuon.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'ijwyhBl15ZA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'18', 'Trailer'=>'ijwyhBl15ZA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1'],
             
             ['Tenphim'=>'Triệu tử long', 'Hinhanh'=>'XinZhao.jpg','Diem'=>'7','Mota'=>'Trong buổi họp mặt của nhóm bạn thân, một thành viên bất ngờ đề xuất trò chơi chia sẻ điện thoại nhằm tăng tinh thần “đoàn kết”. Từ đó, những góc khuất của từng người dần hé lộ và khiến cho mối quan hệ vốn khắng khít của họ bắt đầu lay chuyển.',
-            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','Trailer'=>'-YGdJnLMSOA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1']
+            'Ds_dienvien'=>'Thái Hoà, Đức Thịnh, Hồng Ánh, Hứa Vỹ Văn, Kiều Minh Tuấn','DoTuoi'=>'10', 'Trailer'=>'-YGdJnLMSOA','ThoiLuong'=>'01:00:00','dinhdang_id'=>'1','daodien_id'=>'5','trangthai_id'=>'2','theloai_id'=>'1']
 		
             ]);
 	}

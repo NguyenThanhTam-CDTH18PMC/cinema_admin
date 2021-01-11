@@ -21,6 +21,7 @@ class CreatePhimsTable extends Migration
             $table->text('Mota');
             $table->text('Ds_dienvien');
             $table->string('Trailer');
+            $table->integer('DoTuoi');
             $table->time('ThoiLuong');
             $table->integer('dinhdang_id')->unsigned()->index();
             $table->integer('daodien_id')->unsigned()->index();
