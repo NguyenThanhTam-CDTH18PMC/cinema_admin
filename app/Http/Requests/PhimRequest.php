@@ -29,6 +29,7 @@ class PhimRequest extends FormRequest
             'Mota' => ' required',
             'Diem' => ' required',
             'theloai' => ' required',
+            'DoTuoi' => ' required',
             'Trangthai' => ' required',
             'Dinhdang' => ' required',
             'Daodien' => ' required',

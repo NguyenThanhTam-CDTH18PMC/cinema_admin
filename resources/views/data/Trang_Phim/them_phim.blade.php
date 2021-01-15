@@ -125,12 +125,6 @@
               <div class="form-group">
                 <label for="inputStatus">Diễn viên</label>
                 <input type="text" name="dienvien" class="form-control {{ $errors->has('dienvien')? ' is-invalid': ''}}">
-                {{-- <select class="form-control {{ $errors->has('dienvien') ? ' is-invalid ' : ''}}" name="dienvien">
-                  <option selected disabled>----Chọn diễn viên----</option>
-                  @foreach ($dienvien as $dv)
-                  <option value="{{$dv->Tendienvien}}">{{$dv->Tendienvien}}</option>
-                  @endforeach
-                </select> --}}
                 @if ($errors->has('dienvien'))
                   <span class="invalid-feedback">
                       <strong>{{ $errors->first('dienvien') }}</strong>
@@ -169,6 +163,15 @@
                 <select class="form-control custom-select" name="Diem">
                   <option selected disabled>----Chọn----</option>
                   @for($i=0; $i <= 10; $i++)
+                      <option value="{{$i}}">{{ $i}}</option>
+                  @endfor
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Độ Tuổi</label>
+                <select class="form-control custom-select" name="DoTuoi">
+                  <option selected disabled>----Chọn----</option>
+                  @for($i=5; $i <= 18; $i++)
                       <option value="{{$i}}">{{ $i}}</option>
                   @endfor
                 </select>

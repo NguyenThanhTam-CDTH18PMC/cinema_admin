@@ -51,9 +51,8 @@
               <div class="form-group">
                 <label for="inputStatus">Điểm</label>
                 <select class="form-control custom-select" name="Diem">
-                  <option selected disabled>{{$phim[0]->Diem}}</option>
                   @for($i=0; $i <= 10; $i++)
-                      <option value={{ $i}}> {{ $i }}</option>
+                      <option @if($phim[0]->Diem == $i) selected @endif value="{{$i}}"> {{$i}} </option>
                   @endfor
                 </select>
               </div>
@@ -125,8 +124,14 @@
                   @endforeach
                 </select>
               </div>
-              
-              
+              <div class="form-group">
+                <label for="inputStatus">Độ tuổi</label>
+                <select class="form-control custom-select" name="DoTuoi">
+                  @for($i=5; $i <= 18; $i++)
+                      <option @if($phim[0]->DoTuoi == $i) selected @endif value="{{$i}}">{{$i}}</option>
+                  @endfor
+                </select>
+              </div>
 
             </div>
             <!-- /.card-body -->

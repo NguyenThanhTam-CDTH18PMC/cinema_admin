@@ -49,6 +49,9 @@
                     <p><b>Định dạng:  </b>{{ $phim[0]->Loaidinhdang }}</p>
                   </div>
                   <div class="form-group">
+                    <p><b>Độ tuổi:  </b>{{ $phim[0]->DoTuoi }}<sup>+</sup></p>
+                  </div>
+                  <div class="form-group">
                     <p><b>Trạng thái:  </b>{{ $phim[0]->Tentrangthai }}</p>
                   </div>
                   <div class="form-group">

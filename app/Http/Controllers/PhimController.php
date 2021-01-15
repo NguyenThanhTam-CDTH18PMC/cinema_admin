@@ -105,7 +105,7 @@ class PhimController extends Controller
                 ->join('dao_diens','phims.daodien_id','=','dao_diens.id')
                 ->select('phims.id', 'phims.Tenphim', 'phims.Hinhanh', 'phims.Mota', 'phims.Trailer',
                    'the_loais.Tentheloai', 'phims.Ds_dienvien','phims.Diem', 'Phims.ThoiLuong',
-                   'trang_thais.Tentrangthai', 'dinh_dangs.Loaidinhdang', 'dao_diens.Tendaodien')
+                   'trang_thais.Tentrangthai', 'dinh_dangs.Loaidinhdang', 'dao_diens.Tendaodien', 'phims.DoTuoi')
                 ->where('phims.id',"=",$id)
                 ->get();
         return view('data.Trang_Phim.chitiet_phim',['phim'=>$phim]);
@@ -130,7 +130,7 @@ class PhimController extends Controller
                     ->join('dinh_dangs','phims.dinhdang_id','=','dinh_dangs.id')
                     ->join('dao_diens','phims.daodien_id','=','dao_diens.id')
                     ->select('phims.id', 'phims.Tenphim', 'phims.Hinhanh', 'phims.Mota', 'phims.Trailer',
-                    'the_loais.Tentheloai', 'phims.Ds_dienvien','phims.Diem', 'phims.ThoiLuong',
+                    'the_loais.Tentheloai', 'phims.Ds_dienvien','phims.Diem', 'phims.ThoiLuong', 'phims.DoTuoi',
                     'trang_thais.Tentrangthai', 'dinh_dangs.Loaidinhdang', 'dao_diens.Tendaodien',
                     'phims.daodien_id', 'phims.theloai_id', 'phims.trangthai_id','phims.dinhdang_id')
                     ->where('phims.id',"=",$id)
@@ -150,7 +150,7 @@ class PhimController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $request, $id)
+    public function update(PhimRequest $request, $id)
     {
         if($request->hasFile('Hinhanh'))
         {
@@ -159,9 +159,7 @@ class PhimController extends Controller
             $image_ext = $request->file('Hinhanh')->getClientOriginalExtension();
             $filenameToStore = $filename.'-'.time().'.'.$image_ext;
             $path = $request->file('Hinhanh')->storeAs('',$filenameToStore);
-        }
-        else
-        {       
+        } 
              $phim = Phim::find($id);
 
             $phim->Tenphim = $request['Tenphim'];
@@ -170,6 +168,7 @@ class PhimController extends Controller
             $phim->Ds_dienvien = $request['dienvien'];
             $phim->Trailer = $request['Trailer'];
             $phim->ThoiLuong = $request['ThoiLuong'];
+            $phim->DoTuoi = $request['DoTuoi'];
             $phim->dinhdang_id = $request['Dinhdang'];
             $phim->daodien_id = $request['Daodien'];
             $phim->trangthai_id = $request['Trangthai'];
@@ -178,26 +177,6 @@ class PhimController extends Controller
             $phim->save();
     
             return redirect()->route('phim.index');
-            return $request;
-        }
-
-        $phim = Phim::find($id);
-
-        $phim->Tenphim = $request['Tenphim'];
-        $phim->Hinhanh = $filenameToStore;
-        $phim->Mota = $request['Mota'];
-        $phim->Ds_dienvien = $request['dienvien'];
-        $phim->Trailer = $request['Trailer'];
-        $phim->ThoiLuong = $request['ThoiLuong'];
-        $phim->dinhdang_id = $request['Dinhdang'];
-        $phim->daodien_id = $request['Daodien'];
-        $phim->trangthai_id = $request['Trangthai'];
-        $phim->theloai_id = $request['theloai'];
-
-        $phim->save();
-
-        return redirect()->route('phim.index');
-        return $request;
     }
 
     /**
