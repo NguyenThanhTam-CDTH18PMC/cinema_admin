@@ -363,23 +363,29 @@ class LichchieuDatabaseSeeder extends Seeder
 {
 	public function run() {
 		DB::table('lich_chieus')->insert([
-			['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-01'],
-            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
-            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],
-            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'2','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'3','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'1','rap_id'=>'2','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'2','rap_id'=>'2','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-01'],
-            ['phim_id'=>'3','rap_id'=>'2','suatchieu_id'=>'6', 'NgayChieu'=>'2021-01-01'],
-            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-02'],
-            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-02'],
-            ['phim_id'=>'4','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'5','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'6','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'4','rap_id'=>'2','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'5','rap_id'=>'2','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-01'],
-			['phim_id'=>'6','rap_id'=>'2','suatchieu_id'=>'6', 'NgayChieu'=>'2021-01-01']
+            ['phim_id'=>'1','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-20'],
+            ['phim_id'=>'2','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-20'],
+            ['phim_id'=>'4','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-20'],
+            ['phim_id'=>'5','rap_id'=>'1','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-20'],
+            ['phim_id'=>'7','rap_id'=>'1','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-20'],
+            ['phim_id'=>'9','rap_id'=>'1','suatchieu_id'=>'6', 'NgayChieu'=>'2021-01-20'],
+            ['phim_id'=>'12','rap_id'=>'2','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-20'],
+            ['phim_id'=>'16','rap_id'=>'2','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-20'],
+
+            ['phim_id'=>'3','rap_id'=>'1','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'6','rap_id'=>'1','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'8','rap_id'=>'1','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'10','rap_id'=>'1','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'11','rap_id'=>'1','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'13','rap_id'=>'1','suatchieu_id'=>'6', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'14','rap_id'=>'2','suatchieu_id'=>'1', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'15','rap_id'=>'2','suatchieu_id'=>'2', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'17','rap_id'=>'2','suatchieu_id'=>'3', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'19','rap_id'=>'2','suatchieu_id'=>'4', 'NgayChieu'=>'2021-01-16'],
+            ['phim_id'=>'20','rap_id'=>'2','suatchieu_id'=>'5', 'NgayChieu'=>'2021-01-16']
+
+
+            
 		]);
 	}
 }

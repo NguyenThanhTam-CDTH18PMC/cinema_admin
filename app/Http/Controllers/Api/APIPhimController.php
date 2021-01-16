@@ -53,7 +53,7 @@ class APIPhimController extends Controller
                 ->join('dinh_dangs','phims.dinhdang_id','=','dinh_dangs.id')
                 ->join('dao_diens','phims.daodien_id','=','dao_diens.id')
                 ->select('phims.id', 'phims.Tenphim', 'phims.Mota', 'phims.Trailer',
-                   'the_loais.Tentheloai', 'phims.Ds_dienvien','phims.Diem', 'Phims.ThoiLuong',
+                   'the_loais.Tentheloai', 'phims.Ds_dienvien','phims.Diem', 'Phims.ThoiLuong','Phims.DoTuoi',
                    'trang_thais.Tentrangthai', 'dinh_dangs.Loaidinhdang', 'dao_diens.Tendaodien')
                 ->where('phims.id',"=",$id)
                 ->get();
