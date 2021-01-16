@@ -21,552 +21,73 @@
 
       <!-- Default box -->
       <div class="card">
+        <!-- Search -->
         <div class="card-header">
-          <h3 class="card-title">Danh Sách Loại Ghế</h3>
-
           <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fas fa-times"></i></button>
+            <div class="input-group input-group-sm" style="width:200px;">
+              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+              </div>
+            </div>
           </div>
-        </div>
+      </div>
+        
         <div class="card-body p-0">
           <table class="table table-striped projects">
               <thead>
                   <tr>
+                      <th class="text-center" style="width: 5%">
+                          STT
+                      </th>
+                      <th class="text-center" style="width: 5%">
+                          Tên Loại Ghế
+                      </th>
+                      <th class="text-center" style="width: 5%">
+                          Giá
+                      </th>
                       <th style="width: 1%">
-                          1
                       </th>
-                      <th style="width: 20%">
-                          Project Name
-                      </th>
-                      <th style="width: 30%">
-                          Team Members
-                      </th>
-                      <th>
-                          Project Progress
-                      </th>
-                      <th style="width: 8%" class="text-center">
-                          Status
-                      </th>
-                      <th style="width: 20%">
+                      <th style="width: 1%">
                       </th>
                   </tr>
               </thead>
-              <tbody>
+              <?php $stt = 1 ?>
+              @foreach ($loaighe as $dd)
+                <tbody>
                   <tr>
-                      <td>
-                          #
+                      <td class="text-center">
+                         {{ $dd->id }}
                       </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
+                      <td class="text-center">
+                         {{ $dd->Tenloaighe }}
                       </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{ asset('dist/img/avatar.png') }}">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{ asset('dist/img/avatar2.png') }}">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{ asset('dist/img/avatar3.png') }}">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="{{ asset('dist/img/avatar04.png') }}">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
-                              </div>
-                          </div>
-                          <small>
-                              57% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
+                      <td class="text-center">
+                          {{ $dd->giatien}}
                       </td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
+                        <form action="{{ route('loaighe.sua',$dd->id) }}" method="GET">
+                        @csrf
+                        <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i></button>
+                      </form>
                       </td>
                       <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar2.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="47" aria-volumemin="0" aria-volumemax="100" style="width: 47%">
-                              </div>
-                          </div>
-                          <small>
-                              47% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar2.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar3.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77" aria-volumemin="0" aria-volumemax="100" style="width: 77%">
-                              </div>
-                          </div>
-                          <small>
-                              77% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-danger">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar2.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar3.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar04.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="60" aria-volumemin="0" aria-volumemax="100" style="width: 60%">
-                              </div>
-                          </div>
-                          <small>
-                              60% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar04.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar5.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="12" aria-volumemin="0" aria-volumemax="100" style="width: 12%">
-                              </div>
-                          </div>
-                          <small>
-                              12% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar2.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar3.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar04.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="35" aria-volumemin="0" aria-volumemax="100" style="width: 35%">
-                              </div>
-                          </div>
-                          <small>
-                              35% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar04.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar5.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="87" aria-volumemin="0" aria-volumemax="100" style="width: 87%">
-                              </div>
-                          </div>
-                          <small>
-                              87% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar3.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar04.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77" aria-volumemin="0" aria-volumemax="100" style="width: 77%">
-                              </div>
-                          </div>
-                          <small>
-                              77% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>
-                          #
-                      </td>
-                      <td>
-                          <a>
-                              AdminLTE v3
-                          </a>
-                          <br/>
-                          <small>
-                              Created 01.01.2019
-                          </small>
-                      </td>
-                      <td>
-                          <ul class="list-inline">
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar3.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar04.png">
-                              </li>
-                              <li class="list-inline-item">
-                                  <img alt="Avatar" class="table-avatar" src="dist/img/avatar5.png">
-                              </li>
-                          </ul>
-                      </td>
-                      <td class="project_progress">
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-green" role="progressbar" aria-volumenow="77" aria-volumemin="0" aria-volumemax="100" style="width: 77%">
-                              </div>
-                          </div>
-                          <small>
-                              77% Complete
-                          </small>
-                      </td>
-                      <td class="project-state">
-                          <span class="badge badge-success">Success</span>
-                      </td>
-                      <td class="project-actions text-right">
-                          <a class="btn btn-primary btn-sm" href="#">
-                              <i class="fas fa-folder">
-                              </i>
-                              View
-                          </a>
-                          <a class="btn btn-info btn-sm" href="#">
-                              <i class="fas fa-pencil-alt">
-                              </i>
-                              Edit
-                          </a>
-                          <a class="btn btn-danger btn-sm" href="#">
-                              <i class="fas fa-trash">
-                              </i>
-                              Delete
-                          </a>
+                      <form action="{{ route('loaighe.xoa',$dd->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                      </form> 
                       </td>
                   </tr>
               </tbody>
+              @endforeach
+              
           </table>
         </div>
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
-
+      
     </section>
     <!-- /.content -->
   </div>

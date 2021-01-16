@@ -20,61 +20,66 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+    <form class="content" action="{{ route('ghe.capnhat',$ghe->id) }}" method="POST">
+      @csrf
+      @method('PUT')
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">General</h3>
-
+              <h3 class="card-title">Sửa thông tin</h3>
               <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                   <i class="fas fa-minus"></i></button>
               </div>
             </div>
             <div class="card-body">
+
               <div class="form-group">
-                <label for="inputName">Project Name</label>
-                <input type="text" id="inputName" class="form-control" value="AdminLTE">
+                <label for="inputName">Số Ghế</label>
+                <input type="text" name="Soghe" class="form-control" value="{{$ghe->Soghe}}">
               </div>
-              <div class="form-group">
-                <label for="inputDescription">Project Description</label>
-                <textarea id="inputDescription" class="form-control" rows="4">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</textarea>
-              </div>
-              <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option>On Hold</option>
-                  <option>Canceled</option>
-                  <option selected>Success</option>
+
+               <div class="form-group">
+                <label for="inputStatus">Loại Ghế</label>
+                <select class="form-control custom-select" name="loaighe">
+                      @foreach ($loai_ghes as $loaighe)
+                          <option   @if( $loaighe->id == $ghe[0]->Loaighe_id) elected @endif value="{{$loaighe->id}}">{{$loaighe->Tenloaighe}}</option>
+                      @endforeach
                 </select>
               </div>
+
               <div class="form-group">
-                <label for="inputClientCompany">Client Company</label>
-                <input type="text" id="inputClientCompany" class="form-control" value="Deveint Inc">
+                <label for="inputStatus">Rạp</label>
+                <select class="form-control custom-select" name="rap">
+                      @foreach ($raps as $rap)
+                          <option   @if( $rap->id == $ghe[0]->rap_id) elected @endif value="{{$rap->id}}">{{$rap->Tenrap}}</option>
+                      @endforeach
+                </select>
               </div>
+
               <div class="form-group">
-                <label for="inputProjectLeader">Project Leader</label>
-                <input type="text" id="inputProjectLeader" class="form-control" value="Tony Chicken">
+                <label for="inputName">Trạng Thái</label>
+                <input type="text" name="Trangthai" class="form-control" value="{{$ghe->Trangthai}}">
               </div>
+              
+
             </div>
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
         </div>
-    
       </div>
+      <center>
       <div class="row">
         <div class="col-12">
-          <a href="#" class="btn btn-secondary">Cancel</a>
-          <input type="submit" value="Save Changes" class="btn btn-success float-right">
+          <input type="submit" value="Sửa ngay" class="btn btn-success">
         </div>
       </div>
-    </section>
+      </center>
+    </form>
+    
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
     @endsection
-

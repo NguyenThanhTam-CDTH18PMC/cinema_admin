@@ -154,48 +154,25 @@
             </ul>
           </li>
           <!--endtables-->
-          <!--tables-trang-thai-phim-->
-           <li class="nav-item has-treeview">
+          <!--tables-thong-tin-rap-->
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Trạng Thái Phim
+                Rạp
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
 
-                <a href=" {{ route('trangthai.index') }}" class="nav-link">
-                  <p>Dữ Liệu Bảng</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('trangthai.them') }}" class="nav-link">
-                  <p>Thêm</p>
-                </a>
-              </li>
-             
-            </ul>
-          <!--endtables-->
-          <!--tables-thong-tin-rap-->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
-              <p>
-                Rap
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href=" {{ route('rap.index') }}" class="nav-link">
                   
                   <p>Dữ Liệu Bảng</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('rap.them') }}" class="nav-link">
                   
                   <p>Thêm</p>
                 </a>
@@ -204,6 +181,7 @@
             </ul>
           </li>
           <!--endtables-->
+
           <!--tables-loai-ghe-->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -215,55 +193,70 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" {{ URL::to('data_loaighe')}}" class="nav-link">
+                <a href=" {{ route('loaighe.index')}}" class="nav-link">
                   
                   <p>Dữ Liệu Bảng</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ URL::to('them_loaighe') }}" class="nav-link">
+                <a href="{{ route('loaighe.them') }}" class="nav-link">
                   
                   <p>Thêm</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ URL::to('sua_loaighe') }}" class="nav-link">
-                  
-                  <p>Sửa</p>
-                </a>
-              </li>
-
+              
             </ul>
           </li>
+          <!--endtables-->
+
+          <!--tables-ghe-->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Ghế
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href=" {{ route('ghe.index')}}" class="nav-link">
+                  
+                  <p>Dữ Liệu Bảng</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('ghe.them') }}" class="nav-link">
+                  
+                  <p>Thêm</p>
+                </a>
+              </li>            
+            </ul>
+          </li>
+
           <!--endtables-->
           <!--tables-thong-tin-lich-chiueu-->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Lịch Chiếu
+               Lịch Chiếu
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" {{ URL::to('data_lichchieu')}}" class="nav-link">
+                <a href=" {{ route('lichchieu.index')}}" class="nav-link">
                   
                   <p>Dữ Liệu Bảng</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ URL::to('them_lichchieu') }}" class="nav-link">
+                <a href="{{ route('lichchieu.them') }}" class="nav-link">
                   
                   <p>Thêm</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ URL::to('sua_lichchieu') }}" class="nav-link">
-                  <p>Sửa</p>
-                </a>
-              </li>
-
             </ul>
           </li>
           <!--endtables-->
@@ -278,27 +271,21 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" {{ URL::to('data_suatchieu')}}" class="nav-link">
+                <a href=" {{ route('suatchieu.index')}}" class="nav-link">
                   
                   <p>Dữ Liệu Bảng</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ URL::to('them_suatchieu') }}" class="nav-link">
+                <a href="{{ route('suatchieu.them') }}" class="nav-link">
                   
                   <p>Thêm</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ URL::to('sua_suatchieu') }}" class="nav-link">
-                  
-                  <p>Sửa</p>
-                </a>
-              </li>
-
+              </li>            
             </ul>
           </li>
           <!--endtables-->
+
 
           <!--tables-ve-->
           <li class="nav-item has-treeview">

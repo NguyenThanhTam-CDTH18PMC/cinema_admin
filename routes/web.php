@@ -92,5 +92,51 @@ Route::group(['middleware' => ['CheckAdminLogin']], function () {
         'create'=> 'phanhoi.them',
         'store'=> 'phanhoi.luu'
     ]);
+        //---------Thịnh-------------
+    //Trang Lịch Chiếu
+    Route::resource('lichchieu','LichChieuController')->names([
+        'show'=> 'lichchieu.chitiet',
+        'destroy'=> 'lichchieu.xoa',
+        'edit'=> 'lichchieu.sua',
+        'update'=> 'lichchieu.capnhat',
+        'create'=> 'lichchieu.them',
+        'store'=> 'lichchieu.luu'
+    ]);
+        //Trang Suất Chiếu
+    Route::resource('suatchieu','SuatChieuController')->names([
+        'show'=> 'suatchieu.chitiet',
+        'destroy'=> 'suatchieu.xoa',
+        'edit'=> 'suatchieu.sua',
+        'update'=> 'suatchieu.capnhat',
+        'create'=> 'suatchieu.them',
+        'store'=> 'suatchieu.luu'
+    ]);
+        //Trang rạp
+    Route::resource('rap','RapController')->names([
+        'show'=> 'rap.chitiet',
+        'destroy'=> 'rap.xoa',
+        'edit'=> 'rap.sua',
+        'update'=> 'rap.capnhat',
+        'create'=> 'rap.them',
+        'store'=> 'rap.luu'
+    ]);
+        //Trang Loại ghế
+    Route::resource('loaighe','LoaiGheController')->names([
+        'show'=> 'loaighe.chitiet',
+        'destroy'=> 'loaighe.xoa',
+        'edit'=> 'loaighe.sua',
+        'update'=> 'loaighe.capnhat',
+        'create'=> 'loaighe.them',
+        'store'=> 'loaighe.luu'
+    ]);
+        //Trang ghế
+    Route::resource('ghe','GheController')->names([
+        'show'=> 'ghe.chitiet',
+        'destroy'=> 'ghe.xoa',
+        'edit'=> 'ghe.sua',
+        'update'=> 'ghe.capnhat',
+        'create'=> 'ghe.them',
+        'store'=> 'ghe.luu'
+    ]);
 });
 

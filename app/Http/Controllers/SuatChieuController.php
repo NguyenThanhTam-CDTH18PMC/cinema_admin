@@ -40,9 +40,9 @@ class SuatChieuController extends Controller
     public function store(Request $request)
     {
         $vali_suatchieu = $request->validate([
+            'id' => $request['id'],
             'GioChieu' => $request['GioChieu'],
-            'phim_id' => $request['phim_id'],
-            'rap_id' => $request['rap_id'],
+            'NgayChieu' => $request['NgayChieu'],
         ]);
         $suatchieu = SuatChieu::create($vali_suatchieu);
         return redirect()->route('suatchieu.index');
@@ -69,14 +69,14 @@ class SuatChieuController extends Controller
     public function update(Request $request, $id)
     {
         $vali_suatchieu = $request->validate([
+            'id' => $request['id'],
             'GioChieu' => $request['GioChieu'],
-            'phim_id' => $request['phim_id'],
-            'rap_id' => $request['rap_id'],
+            'NgayChieu' => $request['NgayChieu'],
         ]);
         $suatchieu = SuatChieu::find($id);
+        $suatchieu->id = $request->id;
         $suatchieu->GioChieu = $request->GioChieu;
-        $suatchieu->phim_id = $request->phim_id;
-        $suatchieu->rap_id = $request->rap_id;
+        $suatchieu->NgayChieu = $request->NgayChieu;
         $suatchieu->save();
         return redirect()->route("suatchieu.index");
     }

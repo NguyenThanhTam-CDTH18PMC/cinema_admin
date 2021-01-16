@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Rap;
+use App\Http\Requests\FormPost;
+use Session;
+
 class RapController extends Controller
 {
     /**
@@ -13,8 +17,8 @@ class RapController extends Controller
      */
     public function index()
     {
-        $ds_rap = Rap::all();
-        return view("data.Trang_Rap.data_rap",['ds_rap'=>$ds_rap]);
+        $rap = Rap::paginate(10);
+        return view('data.Trang_Rap.data_rap',['rap'=>$rap]);
     }
 
     /**
@@ -24,7 +28,7 @@ class RapController extends Controller
      */
     public function create()
     {
-        //
+        return view('data.Trang_Rap.them_rap');
     }
 
     /**
@@ -35,20 +39,16 @@ class RapController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vali_rap = $request->validate([
+            'id' => $request['id'],  
+            'Tenrap' => $request['Tenrap'],
+            'hang' => $request['hang'],
+            'cot' => $request['cot'],
+            
+        ]);
+        $rap = Rap::create($vali_rap);
+        return redirect()->route('rap.index');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -57,7 +57,8 @@ class RapController extends Controller
      */
     public function edit($id)
     {
-        //
+        $rap = Rap::find($id);
+        return view("data.Trang_Rap.sua_rap",['rap'=>$rap]);
     }
 
     /**
@@ -69,7 +70,20 @@ class RapController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $vali_rap = $request->validate([
+            'id' => $request['id'],
+            'Tenrap' => $request['Tenrap'],
+            'hang' => $request['hang'],
+            'cot' => $request['cot'],
+            
+        ]);
+        $rap = Rap::find($id);
+        $rap->id = $request->id;
+        $rap->Tenrap = $request->Tenrap;
+        $rap->hang = $request->hang;
+        $rap->cot = $request->cot;        
+        $rap->save();
+        return redirect()->route("rap.index");
     }
 
     /**

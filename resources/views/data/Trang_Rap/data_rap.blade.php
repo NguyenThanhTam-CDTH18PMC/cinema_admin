@@ -6,11 +6,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Danh Sách Rạp</h1>
+            <h1>Danh Sách Rạp Chiếu Phim</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Rạp</a></li>
+              <li class="breadcrumb-item"><a href="#">Rạp Chiếu</a></li>
               <li class="breadcrumb-item active">Danh Sách Rạp</li>
             </ol>
           </div>
@@ -18,38 +18,36 @@
       </div><!-- /.container-fluid -->
     </section>
   <section class="content">
+
       <!-- Default box -->
       <div class="card">
-        <!-- Thanh tìm kiếm -->
+        <!-- Search -->
         <div class="card-header">
-          <div class="card-tools">
-            <div class="input-group input-group-sm" style="width:200px;">
-              <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+            <div class="card-tools">
+              <div class="input-group input-group-sm" style="width:200px;">
+                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                </div>
               </div>
             </div>
-          </div>
-      </div>
+        </div>
 
         <div class="card-body p-0">
           <table class="table table-striped projects">
               <thead>
                   <tr>
-                      <th style="width: 1%">
-                          STT
-                      </th>
                       <th class="text-center" style="width: 5%">
-                          Tên rạp
+                          ID
                       </th>
                       <th style="width: 5%" class="text-center">
-                         Số ghế
+                          Tên Rạp
                       </th>
                       <th style="width: 5%" class="text-center">
-                          Chi nhánh
+                          Hàng
                       </th>
                       <th style="width: 5%" class="text-center">
-                          Trạng thái
+                          Cột
                       </th>
                       <th style="width: 1%">
                       </th>
@@ -57,40 +55,29 @@
                       </th>
                   </tr>
               </thead>
-              <?php  $stt = 1  ?>
-              @foreach ($ds_rap as $rap)
-
+              @foreach ($rap as $r)
               <tbody>
                   <tr>
                       <td class="text-center">
-                         {{ $stt++ }} 
+                          {{$r->id}}
                       </td>
                       <td class="text-center">
-                         {{ $rap->Tenrap }} 
+                          {{$r->Tenrap}}
                       </td>
                       <td class="text-center">
-                          @php
-                              echo $rap->hang * $rap->cot;
-                          @endphp
+                         {{$r->hang}}
                       </td>
                       <td class="text-center">
-                         {{ $rap->chinhanh }}
+                         {{$r->cot}}
                       </td>
-                      <td class="text-center">
-                          @if ($rap->delete_at == null)
-                            hoạt động
-                          @else
-                            ngừng hoạt động
-                          @endif
-                      </td>
-                      <td>
-                        <form action="{{ route('rap.sua',$rap->id) }}" method="GET">
+                      <td class="project-actions text-right">
+                        <form action="{{ route('rap.sua',$r->id) }}" method="GET">
                         @csrf
                         <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i></button>
                       </form>
                       </td>
                       <td>
-                      <form action="{{ route('rap.xoa',$rap->id) }}" method="POST">
+                      <form action="{{ route('rap.xoa',$r->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -98,14 +85,19 @@
                       </td>
                   </tr>
               </tbody>
-              @endforeach
-
+              @endforeach()
           </table>
         </div>
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
-
+      <center>
+        <div class="row">
+          <div class="col-6">
+            {!! $rap->render() !!}
+          </div>
+        </div>
+        </center>
     </section>
     <!-- /.content -->
   </div>

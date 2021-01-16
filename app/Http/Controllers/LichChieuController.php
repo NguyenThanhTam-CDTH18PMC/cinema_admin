@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\LichChieu;
+use DB;
 use App\Http\Requests\FormPost;
 use Session;
 
@@ -17,7 +18,12 @@ class LichChieuController extends Controller
      */
     public function index()
     {
-        $lichchieu = LichChieu::paginate(10);
+       $lichchieu = DB::table('lich_chieus')
+                ->join('phims','lich_chieus.phim_id','=','phims.id')
+                ->join('suat_chieus','lich_chieus.suatchieu_id','=','suat_chieus.id')
+                ->join('raps','lich_chieus.rap_id','=','raps.id')
+                ->get();
+
         return view('data.Trang_LichChieuPhim.data_lichchieu',['lichchieu'=>$lichchieu]);
     }
 
@@ -28,7 +34,14 @@ class LichChieuController extends Controller
      */
     public function create()
     {
-        return view('data.Trang_LichChieuPhim.them_lichchieu');
+        $phim = DB::table('phims')->get();
+        $rap = DB::table('raps')->get();
+        $suatchieu = DB::table('suat_chieus')->get();
+
+        return view('data.Trang_LichChieuPhim.them_lichchieu', ["phim"=>$phim,
+                                                                "rap"   =>$rap,
+                                                                "suatchieu"=>$suatchieu
+                                                ]);
     }
 
     /**
@@ -39,13 +52,12 @@ class LichChieuController extends Controller
      */
     public function store(Request $request)
     {
-        $vali_lichchieu = $request->validate([
-            'phim_id' => $request['phim_id'],
-            'rap_id' => $request['rap_id'],
-            'thgian_batdau' => $request['thgian_batdau'],
-            'thgian_ketthuc' => $request['thgian_ketthuc'],
+        $lichchieu = LichChieu::create([
+            'Tenphim' => $request['Tenphim'],
+            'Tenrap' => $request['Tenrap'],
+            'GioChieu' => $request['GioChieu'], 
+            'NgayChieu' => $request['NgayChieu'],                                                                 
         ]);
-        $lichchieu = LichChieu::create($vali_lichchieu);
         return redirect()->route('lichchieu.index');
     }
     /**
